@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Click Event Handler</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body{
+            background-color: white;
+            display: flex;
+            min-height: 100vh;
+            justify-content: center;
+            align-items: center;
+        }
+        .container{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .container button{
+            text-align: center;
+            padding: 20px;
+            border: 2px;
+            cursor: pointer;
+            background: linear-gradient(135deg, rgba(255,255,255,0.1), rgba(255,255,255,0));
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border-radius: 20px;
+            border: 1px solid rgba(255,255,255,0.1);
+            box-shadow: 0 8px 32px 0 rgba(0,0,0,0.4);
+        }
+
+    </style>
+
+</head>
+<body>
+    <div class="container">
+        <button>Change color</button>
+    </div>
+    <script>
+        const btn = document.querySelector("button");
+        function random(number){
+            return Math.floor(Math.random()*(number+1));
+        }
+        btn.addEventListener("click",bgChange);
+        function bgChange(){
+            const randClr = `rgb(${random(255)} ${random(255)} ${random(255)})`;
+            document.body.style.backgroundColor = randClr;
+        }
+
+    </script>
+</body>
+</html>
